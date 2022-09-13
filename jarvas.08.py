@@ -18,6 +18,7 @@ import turtle
 from random import choice
 import wolframalpha
 import time
+from playsound import playsound
 #import speech_recognition as sr
 
 
@@ -36,7 +37,7 @@ def speak(audio):
 
 def time():
     t=datetime.datetime.now().strftime("%I:%M %p") # in 12 hauers & minit 
-    speak("it's : ")
+    speak("the current time is  ")
     print(t)
     speak(t)
     
@@ -44,7 +45,27 @@ def time():
 def hmm():
     speak('yes')
 
-    
+def project():
+    speak('should I know the category')
+    open=takecommand()
+    if 'python' in open :
+        speak('opening microsoft Visual Studio')
+        
+        speak('I shall need one more second')
+        vs=r'C:\Users\lenovo ideapad130\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Visual Studio\Visual Studio Code.lnk'
+        os.startfile(vs)
+        speak('preparing the coding environment')
+        speak('The environment has been successfully prepared')
+
+    elif 'sheet' in open:
+        speak('opening microsoft excel')
+        speak('organizing and preparing the spreadsheet')
+        ms_excell=r'C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Microsoft Office 2013\Excel 2013.lnk'
+        os.startfile(ms_excell)
+        speak('I shall need one more second')
+        speak('  the environment is ready ')
+
+
 
 def date():
     year=datetime.datetime.now()
@@ -105,12 +126,7 @@ def screenshot():
 def getjoke():
     speak(pyjokes.get_joke())
 
-#to hwo parametr +972 59-741-2992
 
-#def sendemail(to,contint):
- #   server=smtplib.SMTP('smtp.gmail.com',587) #smtpl is a server , smtp is the mailing serves , 587 is gmail code
-  #  server.ehlo() # ehlo()will help to idintify our self when we use empty server
-   # server.starttls() #will help our model to connict weth the server
 
 
 
@@ -309,10 +325,12 @@ def wether2():
 
 
 
+
+
 if __name__=='__main__':
     
     while True:
-        hmm()
+        
 
         
         query=takecommand().lower()
@@ -323,15 +341,11 @@ if __name__=='__main__':
         elif 'date'in query:
             date()
         
-
+        elif 'up' in query:
+            wishme()
        
 
-        #elif 'up' in query:
-           # wishme()
-
-        #elif 'wake up ' in query:
-           # speak('i am up')
-           # os.startfile('C:\Users\lenovo ideapad130\OneDrive\المستندات\python for every one\jarvas.05.py')
+        
         elif 'what is'  in query:
             speak('searching')
             query=query.replace('what is','')
@@ -416,6 +430,7 @@ if __name__=='__main__':
 
         elif 'hell' in query:
             speak('okay, I will be there waiting for you')
+
 
         elif 'draw' in query:
             speak('Ok, I really welcome any criticism')
@@ -536,15 +551,7 @@ if __name__=='__main__':
             print('the answer:'+answer)
             speak('the answer is :'+answer)
 
-        #elif "what is" in query or 'who is' :
-           # cl=wolframalpha.Client(api)
-           # res=cl.query(query)
-            #try:
-               # print(next(res.results).text)
-                #speak(next(res.results).text)
-           # except StopIteration:
-                #print('no results found')
-               # speak('no results found') # improv it or find another way
+        
 
         elif "stop" in query:
             list=['As You Wish sir','good day to you sir','enjoy the rest of your day','okay I will be near you if you need me again']
@@ -580,14 +587,39 @@ if __name__=='__main__':
             speak('my name is Jarvis you can not change it')
             print('my name is Jarvis you can not change it')
 
+          
+        elif 'jarvis' in query:
+            res=['yes sir', 'for you sir always','how can i help you sir','jarvas in service']
+            speak(choice(res))
+
+        elif 'project' in query:
+            project()
         
-        #elif 'wake up ' in query:
-          #  os.startfile(r'C:\Users\lenovo ideapad130\OneDrive\المستندات\python for every one\jarvas0.6.py')
+        elif 'session' in query:
+            speak('Welcome Back Sir, all systems for coding will be prepared in a few minutes, for now feel free to grab a cup of coffee and enjoy the rest of your day')
+            ms_excel=r'C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Microsoft Office 2013\Excel 2013.lnk'
+            os.startfile(ms_excel)
+            ##############################
+            tl=r'C:\Users\lenovo ideapad130\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Telegram Desktop\Telegram.lnk'
+            os.startfile(tl)
+            #############################3
+            vs=r'C:\Users\lenovo ideapad130\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Visual Studio\Visual Studio Code.lnk'
+            os.startfile(vs)
+            ##############################
+            urll=f'https://www.notion.so/58f32b484ac943a7b7c4f016e3b4aeed?v=70bb82511c3b4f3aa3080bbb1663b528'
+            wb.open_new_tab( urll)
+            ########################
+            ur='https://calendar.google.com/calendar?tab=rc&authuser=0'
+            wb.open_new_tab(ur)
 
-        #elif "session" or "day" in query :
-            #speak('hello')
-           # print('HELLO')
+       
 
 
-        
-    
+        elif 'best' in query:
+            os.startfile('C:\\Users\\lenovo ideapad130\\Downloads\\Telegram Desktop\\dr.mp3')
+            
+        elif 'congratulate' in query:
+            speak('congratulations sir')
+            os.startfile('C:\\Users\\lenovo ideapad130\\Downloads\\Telegram Desktop\\claps voic.mp3')
+   
+        #pip install auto-py-to-exe
