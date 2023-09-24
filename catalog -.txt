@@ -1,0 +1,59 @@
+catalog :-
+
+who are you 
+
+who created you 
+
+'introduce' your self
+
+'jarves'?
+
+'date'
+
+what is__ ?
+can i call you __?
+send meseege to __?
+where is __?
+calculate ___? 1*1 
+
+'wake up' or start my 'session' 
+
+'shutdown'   the systems 
+'restart'    the systems 
+
+'thats it' = 'go offline' = 'stop' = 'sleep' for 5 min 
+
+'wether'-----called or hot 
+ 
+play my song 
+youtub ,google ,telgram ,news , word , excel 
+
+'screenshoot'
+
+'project' iwould like to start a project 
+he will ask for the catigory 
+'python ' ' sheet' 
+
+
+messege 'mom' 
+messege 'mido'
+messege 'family'
+
+
+fun 
+
+'congratulate' me
+you are the 'best'
+go to 'hell'
+i 'love' you
+a 'gift' for my frinds 
+'draw' somthing
+'joke'
+
+
+
+ #pip install auto-py-to-exe
+
+
+
+
